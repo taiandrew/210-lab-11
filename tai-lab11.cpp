@@ -1,6 +1,9 @@
 // COMSC 210 | Lab 11 | Andrew Tai
 // IDE: VS Code
 
+// Lets user input recipes and saves the inputs to a txt file
+// Uses dynamic memory allocation for arrays of structs and inside struct instances
+
 #include <fstream>
 #include <iostream>
 #include <string>

@@ -1,4 +1,10 @@
 Recipe 1: Tea
-Ingredients (1):
+Ingredients: 
  - Leaves
+
+Recipe 2: Fried chicken
+Ingredients: 
+ - chicken
+ - flour
+ - eggs
 
