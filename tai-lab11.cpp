@@ -111,7 +111,7 @@ void exportRecipes(const Recipe* recipes, const int size) {
 
     ofstream outFile("recipes.txt");
     if (!outFile) {
-        cerr << "Error opening file for writing.\n";
+        cerr << "Error opening file recipes.txt.\n";
         return;
     }
 
