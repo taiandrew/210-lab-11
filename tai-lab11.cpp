@@ -68,7 +68,7 @@ void addRecipe(Recipe* recipe) {
 
         // Input ingredients
         for (int j = 0; j < recipe->numIngredients; ++j) {
-            cout << "Ingredient " << (j + 1) << ": ";
+            cout << " - Ingredient " << (j + 1) << ": ";
             getline(cin, recipe->ingredients[j]);
         }    
     } else {
@@ -86,7 +86,7 @@ void inputRecipes(Recipe* recipes, const int size) {
     // Returns: none
 
     for (int i = 0; i < size; ++i) {
-        cout << "\n Recipe " << (i + 1) << "\n";
+        cout << "\nRecipe " << (i + 1) << "\n";
         addRecipe(&recipes[i]);
     }
 
