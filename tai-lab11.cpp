@@ -21,3 +21,40 @@ struct Recipe {
         ingredients = nullptr;
     }
 };
+
+// Function prototypes
+void addRecipe(Recipe*);
+void inputRecipes(Recipe*, const int);
+void exportRecipes(const Recipe*, const int);
+
+// ---------------
+// Main
+// ---------------
+int main() {
+
+    return 0;
+}
+
+// ---------------
+// Programmer functions
+// ---------------
+void addRecipe(Recipe* recipe) {
+    // Adds a new recipe from console inputs
+    // Args:
+    // - recipe: pointer to Recipe instance to populate
+
+    cout << "Name of recipe: ";
+    getline(cin, recipe->name);
+    cout << "Number of ingredients: ";
+    cin >> recipe->numIngredients;
+    cin.ignore();
+
+    // Allocate memory for ingredients
+    recipe->ingredients = new string[recipe->numIngredients];
+
+    // Input ingredients
+    for (int j = 0; j < recipe->numIngredients; ++j) {
+        cout << "Ingredient " << (j + 1) << ": ";
+        getline(cin, recipe->ingredients[j]);
+    }
+}
