@@ -42,6 +42,7 @@ void addRecipe(Recipe* recipe) {
     // Adds a new recipe from console inputs
     // Args:
     // - recipe: pointer to Recipe instance to populate
+    // Returns: none
 
     cout << "Name of recipe: ";
     getline(cin, recipe->name);
@@ -50,11 +51,17 @@ void addRecipe(Recipe* recipe) {
     cin.ignore();
 
     // Allocate memory for ingredients
-    recipe->ingredients = new string[recipe->numIngredients];
+    if (recipe->numIngredients > 0) {
+        recipe->ingredients = new string[recipe->numIngredients];
 
-    // Input ingredients
-    for (int j = 0; j < recipe->numIngredients; ++j) {
-        cout << "Ingredient " << (j + 1) << ": ";
-        getline(cin, recipe->ingredients[j]);
+        // Input ingredients
+        for (int j = 0; j < recipe->numIngredients; ++j) {
+            cout << "Ingredient " << (j + 1) << ": ";
+            getline(cin, recipe->ingredients[j]);
+        }    
+    } else {
+        recipe->ingredients = nullptr;
     }
+
+    return;
 }
