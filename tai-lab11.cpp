@@ -50,7 +50,6 @@ int main() {
     // Clean up
     delete[] recipes;
 
-
     return 0;
 }
 
@@ -116,13 +115,13 @@ void exportRecipes(const Recipe* recipes, const int size) {
     // Write to file
     for (int i = 0; i < size; ++i) {
         outFile << "Recipe " << (i + 1) << ": " << recipes[i].name << "\n";
-        outFile << "Ingredients (" << recipes[i].numIngredients << "):\n";
+        outFile << "Ingredients: \n";
         for (int j = 0; j < recipes[i].numIngredients; ++j) {
             outFile << " - " << recipes[i].ingredients[j] << "\n";
         }
         outFile << "\n";
     }
-
+    
     outFile.close();
     cout << "\nRecipes saved to recipes.txt\n";
 
