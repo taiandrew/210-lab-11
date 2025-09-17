@@ -32,6 +32,18 @@ void exportRecipes(const Recipe*, const int);
 // ---------------
 int main() {
 
+    // Elicit number of recipes
+    int numRecipes;
+    cout << "How many recipes would you like to enter? ";
+    cin >> numRecipes;
+    cin.ignore();
+
+    // Create array and populate
+    Recipe* recipes = nullptr;
+    recipes = new Recipe[numRecipes];
+    inputRecipes(recipes, numRecipes);
+
+
     return 0;
 }
 
@@ -61,6 +73,21 @@ void addRecipe(Recipe* recipe) {
         }    
     } else {
         recipe->ingredients = nullptr;
+    }
+
+    return;
+}
+
+void inputRecipes(Recipe* recipes, const int size) {
+    // Calls addRecipe to input recipes into the array
+    // Args:
+    // - recipes: pointer to array of Recipe instances
+    // - size: number of recipes to input
+    // Returns: none
+
+    for (int i = 0; i < size; ++i) {
+        cout << "\n Recipe " << (i + 1) << "\n";
+        addRecipe(&recipes[i]);
     }
 
     return;
